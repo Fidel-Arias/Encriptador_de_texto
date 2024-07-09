@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Nova+Oval&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+:root{
+    --tipo-letra1: "Lexend", sans-serif;
+    --tipo-letra2: "Nova Oval", system-ui;
+    --tipo-letra3: "Inter", sans-serif;
+    --verde-primario: #34C759;
+    --verde-secundario: #E9FFE9;
+    --verde-terciario: #00691B;
+    --gris--primario: #868E96;
+    --color-fondo: #F2FFF5;
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*Estilos al body*/
+body{
+    height: 100vh;
+    margin: 0;
+    padding: 2em;
+    background-color: var(--color-fondo);
+}
+
+/*Estilos al contenido*/
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    gap: 1em;
+}
+
+/*Responsive para Tablet*/
+@media(max-width:768px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: 1em;
+    }
+
+    header{
+        margin-bottom: 1em;
+    }
+
+    .cropped-logo{
+        width: 80px;
+        height: auto;
+    }
+}
+
+@media(max-width:376px){
+    .container{
+        gap: 2em;
+    }
+}
+
+/*Estilos al main*/
+.main {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100%;
+    width: 50%;
+}
+
+.main textarea{ /*solo crecer hasta rows="16"*/
+    font-family: var(--tipo-letra1);
+    color: red;
+    width: 100%;
+    font-size: 20px;
+    border: none;
+    resize: none;
+    height: auto;
+    background-color: var(--color-fondo);
+}
+
+@media(max-width:768px) {
+    .main {
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 70%;
+        width: 95%;
+    }
+
+    .main textarea{
+        width: 100%;
+    }
+}
+
+@media(max-width:376px) {
+    .main {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 70%;
+        width: 100%;
+    }
+}
+
+
+.main textarea::placeholder {
+    color: red;
+}
+
+.main textarea:focus{
+    outline: none;
+}
+
+/*Estilo al aviso y botones*/
+.contenido__buttons{
+    width: 100%;
+}
+
+.aviso {
+    display: inline-block;
+    width: auto;
+    vertical-align: top;
+    margin-bottom: 1em;
+}
+
+.aviso img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.aviso p {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    font-family: var(--tipo-letra3);
+    font-weight: normal;
+}
+
+.botones {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.button__encriptar, .button__desencriptar{
+    width: 20.5em;
+    height: 4.19em;
+    border-radius: 24px;
+    border: 1px solid var(--verde-primario);
+    font-family: var(--tipo-letra3);
+    font-size: 16px;
+}
+
+.button__encriptar{
+    background-color: var(--verde-primario);
+    color: white;
+}
+
+.button__desencriptar{
+    background-color: var(--verde-secundario);
+    color: var(--verde-terciario);
+}
+
+.button__encriptar:hover{
+    background-color: var(--verde-terciario);
+    cursor: pointer;
+}
+
+.button__desencriptar:hover{
+    cursor: pointer;
+}
+
+.button__desencriptar:disabled{
+    cursor: not-allowed;
+}
+
+/*Responsive para celulares*/
+@media(max-width:376px){
+    .botones {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .button__encriptar, .button__desencriptar{
+        width: 100%;
+        height: 4.19em;
+        border-radius: 24px;
+        border: 1px solid var(--verde-primario);
+        font-family: var(--tipo-letra3);
+        font-size: 16px;
+    }
+
+    .button__encriptar{
+        background-color: var(--verde-primario);
+        color: white;
+    }
+
+    .button__encriptar:hover{
+        background-color: var(--verde-terciario);
+        cursor: pointer;
+    }
+
+}
+
+/*Estilos al bloque de resultado*/
+.bloque-resultado{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: white;
+    height: 80vh;
+    border-radius: 32px;
+    width: 20em;
+    box-shadow: 0 7px 15px 5px rgb(219, 219, 219);
+    overflow: hidden; /* Asegura que el contenido no se desborde fuera del bloque */
+
+}
+
+@media(max-width:768px){
+    .bloque-resultado{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        background-color: white;
+        height: 20%;
+        border-radius: 32px;
+        width: 90%;
+        box-shadow: 0 7px 15px 5px rgb(219, 219, 219);
+        overflow: hidden; /* Asegura que el contenido no se desborde fuera del bloque */
+    }
+
+    .bloque-resultado img{
+        display: none;
+    }
+    
+}
+
+@media(max-width:376px){
+    .bloque-resultado{
+        height: auto;
+        width: 100%;
+        padding: 1em;
+    }
+}
+
+.contenedor__aside {
+    width: 90%;
+    align-self: center;
+    overflow: auto; /* Permite el scroll cuando el contenido se desborda */
+    max-height: 100%; /* Asegura que el contenedor no crezca más allá del bloque */
+}
+
+.bloque-resultado img{
+    width: 100%;
+}
+
+.no__message{
+    font-size: 24px;
+    font-family: var(--tipo-letra3);
+    font-weight: bold;
+}
+
+.mensaje span{
+    font-family: var(--tipo-letra3);
+    font-size: 14px;
+}
+
+/*mensaje encriptado estilos*/
+#texto__encriptado{
+    font-family: var(--tipo-letra3);
+    font-size: 14px;
+    width: 100%;
+    word-wrap: break-word;  /* Permite que las palabras largas se dividan y ajusten a la línea */
+    white-space: normal; /* Lo mismo que word-wrap */
+}
+
+/*Estilos al footer*/
+.footer {
+    margin-top: 5em;
+    display: block;
+    width: 100%;
+}
+
+.footer p {
+    margin: 0;
+    text-align: center;
+    color: black;
+    font-family: var(--tipo-letra3);
+    font-size: 17px;
+}
+
+@media(max-width:768px){
+    .footer {
+        margin-top: 3em;
+    }
+}

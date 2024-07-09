@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Encriptador de Texto</title>
+    <script src="app.js"></script>
+</head>
+<body>
+    <header>
+        <img class="cropped-logo" src="images/Logo.png" alt="logo">
+    </header>
+    <div class="container">
+        <main class="main">
+            <div class="contenido__main">
+                <textarea name="campo__texto" id="campo-texto" cols="80" placeholder="Ingrese el texto aqui"></textarea>
+            </div>
+
+            <div class="contenido__buttons">
+                <div class="aviso">
+                    <img src="images/bi_exclamation-circle-fill.png" alt="icon-exclamation">
+                    <p>Solo letras minúsculas y sin acentos</p>
+                </div>
+                
+                <div class="botones">
+                    <button type="submit" onclick="buttonEncriptar()" id="btn-encriptar" class="button__encriptar">Encriptar</button>
+                    <button type="submit" onclick="buttonDesencriptar()" id="btn-desencriptar" class="button__desencriptar" disabled>Desencriptar</button>
+                </div>
+            </div>
+        </main>
+        <aside class="bloque-resultado">
+            <div class="contenedor__aside">
+                <p id="texto__encriptado"><!--Texto encriptado--></p>
+                <img src="images/Muñeco.png" alt="muñeco" id="muñeco" >
+                <div class="mensaje">
+                    <p class="no__message" id="no__message">Ningún mensaje fue encontrado</p>
+                    <span id="no__message2">Ingresa el texto que desees encriptar o desencriptar</span>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer class="footer">
+        <p>2024 Encriptador de Texto - Hecho por Fidel Arias</p>
+    </footer>
+</body>
+</html>
