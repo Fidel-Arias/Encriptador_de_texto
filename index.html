@@ -33,14 +33,22 @@
         <aside class="bloque-resultado">
             <div class="contenedor__aside">
                 <p id="texto__encriptado"><!--Texto encriptado--></p>
-                <img src="images/Muñeco.png" alt="muñeco" id="muñeco" >
+                <img src="images/muñeco.webp" alt="muñeco" id="muñeco" >
                 <div class="mensaje">
                     <p class="no__message" id="no__message">Ningún mensaje fue encontrado</p>
                     <span id="no__message2">Ingresa el texto que desees encriptar o desencriptar</span>
                 </div>
             </div>
+            <div class="boton__copiar">
+                <button type="submit" onclick="copiarTexto()" id="btn-copiar" class="button__copiar">Copiar</button>
+            </div>
         </aside>
     </div>
+
+    <div id="custom-alert" class="custom-alert">
+        <span id="alert-message">Este es un mensaje de alerta</span>
+    </div>
+
     <footer class="footer">
         <p>2024 Encriptador de Texto - Hecho por Fidel Arias</p>
     </footer>

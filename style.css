@@ -9,6 +9,7 @@
     --verde-secundario: #E9FFE9;
     --verde-terciario: #00691B;
     --gris--primario: #868E96;
+    --mint-primario: #00C7BE;
     --color-fondo: #F2FFF5;
 }
 
@@ -64,9 +65,11 @@ body{
     }
 }
 
-@media(max-width:376px){
+@media(max-width:416px){
     .container{
         gap: 2em;
+        justify-content: space-evenly;
+        min-height: 120%;
     }
 }
 
@@ -108,7 +111,7 @@ body{
     }
 }
 
-@media(max-width:376px) {
+@media(max-width:416px) {
     .main {
         padding: 0;
         display: flex;
@@ -195,8 +198,10 @@ body{
     cursor: not-allowed;
 }
 
+
+
 /*Responsive para celulares*/
-@media(max-width:376px){
+@media(max-width:416px){
     .botones {
         display: flex;
         flex-direction: column;
@@ -238,7 +243,8 @@ body{
     width: 20em;
     box-shadow: 0 7px 15px 5px rgb(219, 219, 219);
     overflow: hidden; /* Asegura que el contenido no se desborde fuera del bloque */
-
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 @media(max-width:768px){
@@ -248,7 +254,7 @@ body{
         justify-content: center;
         text-align: center;
         background-color: white;
-        height: 20%;
+        height: auto;
         border-radius: 32px;
         width: 90%;
         box-shadow: 0 7px 15px 5px rgb(219, 219, 219);
@@ -261,7 +267,7 @@ body{
     
 }
 
-@media(max-width:376px){
+@media(max-width:416px){
     .bloque-resultado{
         height: auto;
         width: 100%;
@@ -274,6 +280,51 @@ body{
     align-self: center;
     overflow: auto; /* Permite el scroll cuando el contenido se desborda */
     max-height: 100%; /* Asegura que el contenedor no crezca más allá del bloque */
+}
+
+.boton__copiar{
+    text-align: center;
+    display: none;
+    height: 60px;
+}
+
+.button__copiar{
+    width: 80%;
+    height: 100%;
+    border-radius: 22px;
+    border: 1px solid var(--mint-primario);
+    background-color: white;
+    font-family: var(--tipo-letra3);
+    color: var(--mint-primario);
+    font-weight: bold;
+}
+
+@media(max-width:768px) {
+    .boton__copiar{
+        height: 100px;
+    }
+
+    .button__copiar{
+        width: 90%;
+        height: 50px;
+    }
+}
+
+@media(max-width:416px){
+    .boton__copiar{
+        height: 57px;
+    }
+
+    .button__copiar{
+        width: 90%;
+    }
+}
+
+.button__copiar:hover{
+    cursor: pointer;
+    background-color: var(--mint-primario);
+    color: white;
+    font-weight: bold;
 }
 
 .bloque-resultado img{
@@ -293,11 +344,15 @@ body{
 
 /*mensaje encriptado estilos*/
 #texto__encriptado{
-    font-family: var(--tipo-letra3);
-    font-size: 14px;
+    font-family: var(--tipo-letra2);
+    font-size: 16px;
     width: 100%;
     word-wrap: break-word;  /* Permite que las palabras largas se dividan y ajusten a la línea */
     white-space: normal; /* Lo mismo que word-wrap */
+    height: auto;
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 0;
 }
 
 /*Estilos al footer*/
@@ -319,4 +374,23 @@ body{
     .footer {
         margin-top: 3em;
     }
+}
+
+/*ALERTAS*/
+.custom-alert {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--verde-primario); /* Color de fondo rojo */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.custom-alert.show {
+    display: block; /* Mostrar la alerta */
 }
