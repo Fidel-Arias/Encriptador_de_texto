@@ -13,25 +13,35 @@ window.addEventListener('resize',ajustarFilasTextarea);
 
 function buttonEncriptar(){
     const text = document.getElementById("campo-texto").value;
+    const validacion = /^[a-z\s]+$/u;
     let i = 0;
     let string = "";
-    while(i < text.length){
-        if (text[i] == "a")
-            string += "ai";
-        else if (text[i] == "e")
-            string += "enter";
-        else if (text[i] == "i")
-            string += "imes";
-        else if (text[i] == "o")
-            string += "ober";
-        else if (text[i] == "u")
-            string += "ufat";
-        else
-            string += text[i];
-        i++;
-    }
-    if (text !== "")
+    if (validacion.test(text)){
+        while(i < text.length){
+            if (text[i] == "a")
+                string += "ai";
+            else if (text[i] == "e")
+                string += "enter";
+            else if (text[i] == "i")
+                string += "imes";
+            else if (text[i] == "o")
+                string += "ober";
+            else if (text[i] == "u")
+                string += "ufat";
+            else
+                string += text[i];
+            i++;
+        }
+
+        if (text !== "")
         desactivarDisplay(string);
+    }
+    else {
+        const alert = document.getElementById("custom-alert");
+        alert.style.backgroundColor = "red";
+        showAlert("Ingrese solo minúsculas y sin acentos");
+    }
+        
 };
 
 function desactivarDisplay(string){
@@ -105,7 +115,6 @@ function mostrarTextoDesencriptado(string){
     if (string != "")
         palabra.innerHTML = string;
     else{
-
         const alert = document.getElementById("custom-alert");
         alert.style.backgroundColor = "red";
         showAlert("Ingrese un texto encriptado...");
